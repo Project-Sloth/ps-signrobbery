@@ -1,13 +1,12 @@
 fx_version 'cerulean'
 game 'gta5'
 
-description 'stopsign'
+author 'Obtaizen'
+description 'Sign Robbery Script'
 version '2.0'
 
-server_scripts {
-	'server.lua'
-} 
-client_scripts {
-	'client.lua'
-}
+shared_script 'config.lua'
+server_script 'server/*'
+client_script 'client/*'
 
+lua54 'yes'
