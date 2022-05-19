@@ -2,15 +2,11 @@
 # qb-signrobbery
 Sign Robbery for QBCore
 
-# Please wait till release to use. 
-
-
 # Dependencies 
 
 - [qb-target](https://github.com/BerkieBb/qb-target)
 - [qb-menu](https://github.com/qbcore-framework/qb-menu)
 - [qb-lock](https://github.com/Tex27/qb-lock)
-
 
 # Installation
 * Download ZIP
