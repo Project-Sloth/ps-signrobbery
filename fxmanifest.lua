@@ -1,7 +1,7 @@
 fx_version 'cerulean'
 game 'gta5'
 
-author 'Obtaizen'
+author 'Obtaizen & Hyper'
 description 'Sign Robbery Script'
 version '2.0'
 
