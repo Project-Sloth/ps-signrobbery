@@ -64,6 +64,6 @@ Sign Robbery for QBCore
    }},
 ```
 # Credits
-* [Obtaizen](https://github.com/Obtaizen)
+* [Hyper](https://github.com/itsHyper)
 * [Snipe](https://github.com/pushkart2)
 
