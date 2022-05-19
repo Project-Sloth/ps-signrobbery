@@ -1,6 +1,5 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 local netObj = ObjToNet(object)
-TriggerServerEvent("signrobbery:server:delete", netObj)
 
 RegisterNetEvent("qb-signrobbery:client:StopSign", function()
     local seconds = math.random(9,12)
@@ -22,7 +21,7 @@ RegisterNetEvent("qb-signrobbery:client:StopSign", function()
         end, function()
             StopAnimTask(PlayerPedId(), "amb@prop_human_bum_bin@base", "base", 1.0)
             TriggerServerEvent("qb-signrobbery:server:StopSign")
-            DeleteEntity(obj)
+            TriggerServerEvent("signrobbery:server:delete", ObjToNet(obj))
         end)
     end
 end)

@@ -1,8 +1,17 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
-RegisterNetEvent("signrobbery:server:delete", function(obj)
-    DeleteEntity(obj)
-end)
+RegisterNetEvent('signrobbery:server:delete')
+AddEventHandler('signrobbery:server:delete', function()
+        local coordFrom = GetEntityCoords(GetPlayerPed(source)) -- Get the position of the source.
+        for k,v in pairs(GetAllObjects()) do -- Do a loop of all the known server-side objects.
+            local objCoord = GetEntityCoords(v) -- Get the coord of the object found
+            print("test")
+            if Config.ModelHash[GetEntityModel(obj)] then
+                DeleteEntity(obj) -- Delete the entity
+                    print("test4")
+            end
+        end
+    end)
 
 RegisterNetEvent("qb-signrobbery:server:StopSign", function()
     local src = source
