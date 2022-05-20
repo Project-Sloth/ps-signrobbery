@@ -1,56 +1,37 @@
 local QBCore = exports['qb-core']:GetCoreObject()
+local objects = {}
 
-RegisterNetEvent('signrobbery:server:delete')
-AddEventHandler('signrobbery:server:delete', function()
-        local coordFrom = GetEntityCoords(GetPlayerPed(source)) -- Get the position of the source.
-        for k,v in pairs(GetAllObjects()) do -- Do a loop of all the known server-side objects.
-            local objCoord = GetEntityCoords(v) -- Get the coord of the object found
-            print("test")
-            if Config.ModelHash[GetEntityModel(obj)] then
-                DeleteEntity(obj) -- Delete the entity
-                    print("test4")
-            end
+QBCore.Functions.CreateCallback("qb-signrobbery:server:GetObjects", function(source, cb)
+    cb(objects)
+end)
+
+RegisterNetEvent('qb-signrobbery:server:delete')
+AddEventHandler('qb-signrobbery:server:delete', function(object)
+    local src = source
+    local sourceCoords = GetEntityCoords(GetPlayerPed(src))
+    if #(sourceCoords - object.coords) < 4 then
+        local Player = QBCore.Functions.GetPlayer(tonumber(src))
+        objects[#objects+1] = {coords = object.coords, model = object.model}
+        TriggerClientEvent("signrobbery:client:delete", -1, object)
+        if object.model == -949234773 then
+            Player.Functions.AddItem("stopsign", 1, false)
+            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['stopsign'], "add")
+        elseif object.model == 1502931467 then
+            Player.Functions.AddItem("walkingmansign", 1, false)
+            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['walkingmansign'], "add")
+        elseif object.model == 1191039009 then
+            Player.Functions.AddItem("dontblockintersectionsign", 1, false)
+            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['dontblockintersectionsign'], "add")
+        elseif object.model == -156356737 then
+            Player.Functions.AddItem("uturnsign", 1, false)
+            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['uturnsign'], "add")
         end
-    end)
-
-RegisterNetEvent("qb-signrobbery:server:StopSign", function()
-    local src = source
-    local xPlayer = QBCore.Functions.GetPlayer(tonumber(src))
-
-	xPlayer.Functions.AddItem("stopsign", 1, false)
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['stopsign'], "add")
+    end
 end)
-
-RegisterNetEvent("qb-signrobbery:server:WalkingManSign", function()
-    local src = source
-    local xPlayer = QBCore.Functions.GetPlayer(tonumber(src))
-
-	xPlayer.Functions.AddItem("walkingmansign", 1, false)
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['walkingmansign'], "add")
-end)
-
-RegisterNetEvent("qb-signrobbery:server:DontBlockIntersectionSign", function()
-    local src = source
-    local xPlayer = QBCore.Functions.GetPlayer(tonumber(src))
-
-	xPlayer.Functions.AddItem("dontblockintersectionsign", 1, false)
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['dontblockintersectionsign'], "add")
-end)
-
-RegisterNetEvent("qb-signrobbery:server:UTurnSign", function()
-    local src = source
-    local xPlayer = QBCore.Functions.GetPlayer(tonumber(src))
-
-	xPlayer.Functions.AddItem("uturnsign", 1, false)
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['uturnsign'], "add")
-end)
-
 
 ---------------------
 --- Usable Signs ----
 ---------------------
-
-
 QBCore.Functions.CreateUseableItem("stopsign", function(source, item)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
