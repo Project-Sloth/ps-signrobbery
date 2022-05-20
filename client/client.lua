@@ -170,7 +170,6 @@ RegisterNetEvent("qb-signrobbery:use:UturnSign", function(src)
 end)
 
 RegisterNetEvent("signrobbery:client:delete", function(object)
-    print("Recieved object", object.coords, object.model)
     objects[#objects+1] = {coords = object.coords, model = object.model}
     local ent = GetClosestObjectOfType(object.coords.x, object.coords.y, object.coords.z, 2.0, object.model, false, false, false)
     if DoesEntityExist(ent) then
