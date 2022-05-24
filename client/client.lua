@@ -58,6 +58,8 @@ RegisterNetEvent("qb-signrobbery:client:WalkingManSign", function()
     local ped = PlayerPedId()
     local success = exports['qb-lock']:StartLockPickCircle(circles, seconds, success)
     if success then
+        loadAnimDict("amb@prop_human_bum_bin@base")
+        TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
         QBCore.Functions.Progressbar("robbing_sign", "Stealing Pedestrian Sign..", math.random(5000, 7000), false, true, {
             disableMovement = true,
             disableCarMovement = true,
@@ -83,7 +85,8 @@ RegisterNetEvent("qb-signrobbery:client:DontBlockIntersectionSign", function()
     local ped = PlayerPedId()
     local success = exports['qb-lock']:StartLockPickCircle(circles, seconds, success)
     if success then
-        local coords = GetEntityCoords(ped)
+        loadAnimDict("amb@prop_human_bum_bin@base")
+        TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
         QBCore.Functions.Progressbar("robbing_sign", "Stealing Intersection Sign..", math.random(5000, 7000), false, true, {
             disableMovement = true,
             disableCarMovement = true,
@@ -109,6 +112,8 @@ RegisterNetEvent("qb-signrobbery:client:UTurnSign", function()
     local ped = PlayerPedId()
     local success = exports['qb-lock']:StartLockPickCircle(circles, seconds, success)
     if success then
+        loadAnimDict("amb@prop_human_bum_bin@base")
+        TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
         QBCore.Functions.Progressbar("robbing_sign", "Stealing U Turn Sign..", math.random(5000, 7000), false, true, {
             disableMovement = true,
             disableCarMovement = true,
@@ -128,6 +133,142 @@ RegisterNetEvent("qb-signrobbery:client:UTurnSign", function()
     end
 end)
 
+RegisterNetEvent("qb-signrobbery:client:NoParkingSign", function()
+    local seconds = math.random(9,12)
+    local circles = math.random(1,3)
+    local ped = PlayerPedId()
+    local success = exports['qb-lock']:StartLockPickCircle(circles, seconds, success)
+    if success then
+        loadAnimDict("amb@prop_human_bum_bin@base")
+        TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
+        QBCore.Functions.Progressbar("robbing_sign", "Stealing No Parking Sign..", math.random(5000, 7000), false, true, {
+            disableMovement = true,
+            disableCarMovement = true,
+            disableMouse = false,
+            disableCombat = true,
+        }, {}, {}, function()
+        end, function()
+            local coords = GetEntityCoords(ped)
+            local obj = GetClosestObjectOfType(coords.x, coords.y, coords.z, 2.0, 3830972543, false, false, false)
+            SetEntityAsMissionEntity(obj, true, true)
+            StopAnimTask(ped, "amb@prop_human_bum_bin@base", "base", 1.0)
+            DeleteEntity(obj)
+            local object = {coords = coords, model = 3830972543}
+            TriggerServerEvent("qb-signrobbery:server:delete", object)
+            AlertCops()
+        end)
+    end
+end)
+
+RegisterNetEvent("qb-signrobbery:client:LeftTurnSign", function()
+    local seconds = math.random(9,12)
+    local circles = math.random(1,3)
+    local ped = PlayerPedId()
+    local success = exports['qb-lock']:StartLockPickCircle(circles, seconds, success)
+    if success then
+        loadAnimDict("amb@prop_human_bum_bin@base")
+        TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
+        QBCore.Functions.Progressbar("robbing_sign", "Stealing Left Turn Sign..", math.random(5000, 7000), false, true, {
+            disableMovement = true,
+            disableCarMovement = true,
+            disableMouse = false,
+            disableCombat = true,
+        }, {}, {}, function()
+        end, function()
+            local coords = GetEntityCoords(ped)
+            local obj = GetClosestObjectOfType(coords.x, coords.y, coords.z, 2.0, 2643325436, false, false, false)
+            SetEntityAsMissionEntity(obj, true, true)
+            StopAnimTask(ped, "amb@prop_human_bum_bin@base", "base", 1.0)
+            DeleteEntity(obj)
+            local object = {coords = coords, model = 2643325436}
+            TriggerServerEvent("qb-signrobbery:server:delete", object)
+            AlertCops()
+        end)
+    end
+end)
+
+RegisterNetEvent("qb-signrobbery:client:RightTurnSign", function()
+    local seconds = math.random(9,12)
+    local circles = math.random(1,3)
+    local ped = PlayerPedId()
+    local success = exports['qb-lock']:StartLockPickCircle(circles, seconds, success)
+    if success then
+        loadAnimDict("amb@prop_human_bum_bin@base")
+        TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
+        QBCore.Functions.Progressbar("robbing_sign", "Stealing Right Turn Sign..", math.random(5000, 7000), false, true, {
+            disableMovement = true,
+            disableCarMovement = true,
+            disableMouse = false,
+            disableCombat = true,
+        }, {}, {}, function()
+        end, function()
+            local coords = GetEntityCoords(ped)
+            local obj = GetClosestObjectOfType(coords.x, coords.y, coords.z, 2.0, 793482617, false, false, false)
+            SetEntityAsMissionEntity(obj, true, true)
+            StopAnimTask(ped, "amb@prop_human_bum_bin@base", "base", 1.0)
+            DeleteEntity(obj)
+            local object = {coords = coords, model = 793482617}
+            TriggerServerEvent("qb-signrobbery:server:delete", object)
+            AlertCops()
+        end)
+    end
+end)
+
+RegisterNetEvent("qb-signrobbery:client:NoTrespassingSign", function()
+    local seconds = math.random(9,12)
+    local circles = math.random(1,3)
+    local ped = PlayerPedId()
+    local success = exports['qb-lock']:StartLockPickCircle(circles, seconds, success)
+    if success then
+        loadAnimDict("amb@prop_human_bum_bin@base")
+        TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
+        QBCore.Functions.Progressbar("robbing_sign", "Stealing No Trespassing Sign..", math.random(5000, 7000), false, true, {
+            disableMovement = true,
+            disableCarMovement = true,
+            disableMouse = false,
+            disableCombat = true,
+        }, {}, {}, function()
+        end, function()
+            local coords = GetEntityCoords(ped)
+            local obj = GetClosestObjectOfType(coords.x, coords.y, coords.z, 2.0, 1021214550, false, false, false)
+            SetEntityAsMissionEntity(obj, true, true)
+            StopAnimTask(ped, "amb@prop_human_bum_bin@base", "base", 1.0)
+            DeleteEntity(obj)
+            local object = {coords = coords, model = 1021214550}
+            TriggerServerEvent("qb-signrobbery:server:delete", object)
+            AlertCops()
+        end)
+    end
+end)
+
+RegisterNetEvent("qb-signrobbery:client:YieldSign", function()
+    local seconds = math.random(9,12)
+    local circles = math.random(1,3)
+    local ped = PlayerPedId()
+    local success = exports['qb-lock']:StartLockPickCircle(circles, seconds, success)
+    if success then
+        loadAnimDict("amb@prop_human_bum_bin@base")
+        TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
+        QBCore.Functions.Progressbar("robbing_sign", "Stealing Yield Sign..", math.random(5000, 7000), false, true, {
+            disableMovement = true,
+            disableCarMovement = true,
+            disableMouse = false,
+            disableCombat = true,
+        }, {}, {}, function()
+        end, function()
+            local coords = GetEntityCoords(ped)
+            local obj = GetClosestObjectOfType(coords.x, coords.y, coords.z, 2.0, 3654973172, false, false, false)
+            SetEntityAsMissionEntity(obj, true, true)
+            StopAnimTask(ped, "amb@prop_human_bum_bin@base", "base", 1.0)
+            DeleteEntity(obj)
+            local object = {coords = coords, model = 3654973172}
+            TriggerServerEvent("qb-signrobbery:server:delete", object)
+            AlertCops()
+        end)
+    end
+end)
+
+--Emote Events
 RegisterNetEvent("qb-signrobbery:use:StopSign", function(src)
     if not holdingSign then
         holdingSign = true
@@ -169,9 +310,65 @@ RegisterNetEvent("qb-signrobbery:use:UturnSign", function(src)
     
 end)
 
+RegisterNetEvent("qb-signrobbery:use:NoParkingSign", function(src)
+    if not holdingSign then
+        holdingSign = true
+        TriggerEvent('animations:client:EmoteCommandStart', {"noparkingsign"})
+    else
+        holdingSign = false
+        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+    end
+    
+end)
+
+RegisterNetEvent("qb-signrobbery:use:LeftTurnSign", function(src)
+    if not holdingSign then
+        holdingSign = true
+        TriggerEvent('animations:client:EmoteCommandStart', {"leftturnsign"})
+    else
+        holdingSign = false
+        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+    end
+    
+end)
+
+RegisterNetEvent("qb-signrobbery:use:RightTurnSign", function(src)
+    if not holdingSign then
+        holdingSign = true
+        TriggerEvent('animations:client:EmoteCommandStart', {"rightturnsign"})
+    else
+        holdingSign = false
+        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+    end
+    
+end)
+
+RegisterNetEvent("qb-signrobbery:use:NoTrespassingSign", function(src)
+    if not holdingSign then
+        holdingSign = true
+        TriggerEvent('animations:client:EmoteCommandStart', {"notrespassingsign"})
+    else
+        holdingSign = false
+        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+    end
+    
+end)
+
+RegisterNetEvent("qb-signrobbery:use:YieldSign", function(src)
+    if not holdingSign then
+        holdingSign = true
+        TriggerEvent('animations:client:EmoteCommandStart', {"yieldsign"})
+    else
+        holdingSign = false
+        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+    end
+    
+end)
+
+--Deleting The Sign Event
 RegisterNetEvent("signrobbery:client:delete", function(object)
     objects[#objects+1] = {coords = object.coords, model = object.model}
-    local ent = GetClosestObjectOfType(object.coords.x, object.coords.y, object.coords.z, 2.0, object.model, false, false, false)
+    local ent = GetClosestObjectOfType(object.coords.x, object.coords.y, object.coords.z, 0.0, object.model, false, false, false)
     if DoesEntityExist(ent) then
         SetEntityAsMissionEntity(ent, 1, 1)
         DeleteObject(ent)
@@ -179,6 +376,7 @@ RegisterNetEvent("signrobbery:client:delete", function(object)
     end
 end)
 
+--Target Exports
 CreateThread(function()
     exports['qb-target']:AddTargetModel('prop_sign_road_01a', {
         options = {
@@ -227,13 +425,124 @@ CreateThread(function()
         },
         distance = 4.0, 
     })
+
+exports['qb-target']:AddTargetModel('prop_sign_road_04a', {
+    options = {
+        {
+            type = 'client',
+            event = "qb-signrobbery:client:NoParkingSign",
+            icon = 'fas fa-user-secret',
+            label = 'Steal Sign',
+        }
+    },
+    distance = 4.0, 
+})
+
+exports['qb-target']:AddTargetModel('prop_sign_road_05e', {
+    options = {
+        {
+            type = 'client',
+            event = "qb-signrobbery:client:LeftTurnSign",
+            icon = 'fas fa-user-secret',
+            label = 'Steal Sign',
+        }
+    },
+    distance = 4.0, 
+})
+
+exports['qb-target']:AddTargetModel('prop_sign_road_05f', {
+    options = {
+        {
+            type = 'client',
+            event = "qb-signrobbery:client:RightTurnSign",
+            icon = 'fas fa-user-secret',
+            label = 'Steal Sign',
+        }
+    },
+    distance = 4.0, 
+})
+
+exports['qb-target']:AddTargetModel('prop_sign_road_restriction_10', {
+    options = {
+        {
+            type = 'client',
+            event = "qb-signrobbery:client:NoTrespassingSign",
+            icon = 'fas fa-user-secret',
+            label = 'Steal Sign',
+        }
+    },
+    distance = 4.0, 
+})
+
+exports['qb-target']:AddTargetModel('prop_sign_road_02a', {
+    options = {
+        {
+            type = 'client',
+            event = "qb-signrobbery:client:YieldSign",
+            icon = 'fas fa-user-secret',
+            label = 'Steal Sign',
+        }
+    },
+    distance = 4.0, 
+})
 end)
+
+--Sell Animation
+RegisterNetEvent('SignRobbery:TradeAnim', function(data)
+	local pid = PlayerPedId()
+	loadAnimDict("mp_common")
+	TriggerServerEvent('SignRobbery:TradeItems', data)
+			TaskPlayAnim(pid, "mp_common", "givetake2_a", 100.0, 200.0, 0.3, 120, 0.2, 0, 0, 0)
+            TaskPlayAnim(v, "mp_common", "givetake2_a", 100.0, 200.0, 0.3, 120, 0.2, 0, 0, 0)
+            Wait(1500)
+            StopAnimTask(pid, "mp_common", "givetake2_a", 1.0)
+            StopAnimTask(v, "mp_common", "givetake2_a", 1.0)
+            RemoveAnimDict("mp_common")
+end)
+
+--Sign Robbery To Scrap Material Event
+RegisterNetEvent('SignRobbery:Trade:Menu', function()
+    exports['qb-menu']:openMenu({
+		{ header = "Sign Scrapping", txt = "Trade Signs for Materials", isMenuHeader = true },
+		{ header = "Stop Signs", txt = "Trade", params = { event = "SignRobbery:TradeAnim", args = 1 } },
+		{ header = "Walking Man Signs",  txt = "Trade", params = { event = "SignRobbery:TradeAnim", args = 2 } },
+        { header = "Don't Block Intersections Signs",  txt = "Trade", params = { event = "SignRobbery:TradeAnim", args = 3 } },
+        { header = "U Turn Signs", txt = "Trade", params = { event = "SignRobbery:TradeAnim", args = 4 } },
+        { header = "No Parking Signs", txt = "Trade", params = { event = "SignRobbery:TradeAnim", args = 5 } },
+        { header = "Turn Left Signs", txt = "Trade", params = { event = "SignRobbery:TradeAnim", args = 6 } },
+        { header = "Turn Right Signs", txt = "Trade", params = { event = "SignRobbery:TradeAnim", args = 7 } },
+        { header = "No Trespassing Signs", txt = "Trade", params = { event = "SignRobbery:TradeAnim", args = 8 } },
+        { header = "Yield Signs", txt = "Trade", params = { event = "SignRobbery:TradeAnim", args = 8 } },
+        { header = "", txt = "❌ Close", params = { event = "SignRobbery:CloseMenu" } },
+    })
+end)
+
+RegisterNetEvent("SignRobbery:CloseMenu", function() exports['qb-menu']:closeMenu() end)
+
+--Export For Scrapping The Sign
+exports['qb-target']:AddBoxZone("SignRobberyScrap", vector3(2332.43, 3026.89, 48.15), 1.5, 1, {
+	name = "SignRobberyScrap",
+	heading = 270,
+	debugPoly = false,
+	minZ = 44.35,
+	maxZ = 48.35,
+}, {
+	options = {
+		{
+            type = "client",
+            event = "SignRobbery:Trade:Menu",
+			icon = "fas fa-recycle",
+			label = "Scrap Sign",
+		},
+	},
+	distance = 2.5
+})
 
 CreateThread(function()
     while true do
         for k = 1, #objects, 1 do
             v = objects[k]
-            local ent = GetClosestObjectOfType(v.coords.x, v.coords.y, v.coords.z, 2.0, v.model, false, false, false)
+            local ent = GetClosestObjectOfType(v.coords.x, v.coords.y, v.coords.z, 0.0, v.model, false, false, false)
             if DoesEntityExist(ent) then
                 SetEntityAsMissionEntity(ent, 1, 1)
                 DeleteObject(ent)

@@ -1,14 +1,12 @@
-Config = Config or {}
+Config = {}
 
-Config.ModelHash = {
-    [`prop_sign_road_01a`] = true,
-    [`prop_sign_road_05a`] = true,
-    [`prop_sign_road_03e`] = true,
-    [`prop_sign_road_03m`] = true,
+Config.Items = {
+    "metalscrap",
+    "copper",
+    "iron",
+    "aluminum",
+    "steel",
 }
-Config.Models = {
-    'prop_sign_road_01a',
-    'prop_sign_road_05a',
-    'prop_sign_road_03e',
-    'prop_sign_road_03m',
-}
+
+Config.min = "1"
+Config.max = "3"
