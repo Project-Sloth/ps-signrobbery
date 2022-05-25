@@ -138,7 +138,7 @@ Then copy this snippet above and paste it at the very bottom of file as shown in
 ![Project Sloth GitHub Project PS-SIGNROBBERY Features Banner](https://user-images.githubusercontent.com/91661118/170384824-5b45be83-e7e0-4d0d-bfca-d3145b13a19a.png)
 
 
-#### Some features to mention within this ps-fuel:
+#### Some features to mention within this ps-signrobbery:
 * Steal signs found around the map
 * Hold signs and use them as an emote
 * Trade signs for materials in return
