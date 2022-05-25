@@ -27,7 +27,7 @@ If you are still lost, Slothy has created a few GIF's to help guide you through 
 
 
 ### Step 2:
-Open the ps-signrobbery resource you just implemented in your resources folder and navigate to **ps-signrobbery/images** then copy those images inside into **qb-inventory/html/images**
+Open the ps-signrobbery resource you just implemented in your resources folder and navigate to **ps-signrobbery/images** then copy those images inside **qb-inventory/html/images**
 
 ![explorer_Vp8W2zuheK](https://user-images.githubusercontent.com/91661118/170383180-d7ee5b03-0495-4076-8db4-b482a31ad141.gif)
 
