@@ -150,7 +150,7 @@ Then copy this snippet above and paste it at the very bottom of file as shown in
 
 
 ### Time to show you what it looks like!
-Here's a few showcased examples while using ps-fuel.
+Here's a few showcased examples while using ps-signrobbery.
 
 #### Steal signs:
 ![68747470733a2f2f692e696d6775722e636f6d2f5641555a484e442e6a7067](https://user-images.githubusercontent.com/91661118/170385069-6accb747-f1a6-433e-a0f3-4ff61c20fcdc.png)
