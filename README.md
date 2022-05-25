@@ -50,7 +50,7 @@ Then copy this snippet above and paste it at the very bottom of file as shown in
 
 ![Code_xLLPuFXZuK](https://user-images.githubusercontent.com/91661118/170383607-9ed085c2-e6d6-40a1-9f03-71f025eb3476.gif)
 
-### Step 3: 
+### Step 4: 
 Keep your entire resources folder with Visual Studio Code (or whichever program you use) and navigate to **dpemotes/client/AnimationList.lua**
 
 ```lua
