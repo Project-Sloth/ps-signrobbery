@@ -225,7 +225,7 @@ RegisterServerEvent("SignRobbery:TradeItems", function(data)
 		else
 			TriggerClientEvent('QBCore:Notify', src, "You Do Not Have Enough Items")
 		end
-	elseif data == 8 then
+	elseif data == 9 then
 		if Player.Functions.GetItemByName('yieldsign') ~= nil and Player.Functions.GetItemByName('yieldsign').amount >= 1 then
 			Player.Functions.RemoveItem("yieldsign", "1")
 			TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["yieldsign"], 'remove', 1)
