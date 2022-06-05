@@ -22,7 +22,7 @@ AddEventHandler('qb-signrobbery:server:delete', function(object)
         elseif object.model == 1191039009 then
             Player.Functions.AddItem("dontblockintersectionsign", 1, false)
             TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['dontblockintersectionsign'], "add")
-        elseif object.model == -156356737 then
+        elseif object.model == 4138610559 then
             Player.Functions.AddItem("uturnsign", 1, false)
             TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['uturnsign'], "add")
         elseif object.model == 3830972543 then
