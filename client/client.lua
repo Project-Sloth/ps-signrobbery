@@ -417,65 +417,65 @@ CreateThread(function()
         distance = 4.0, 
     })
 
-exports['qb-target']:AddTargetModel('prop_sign_road_04a', {
-    options = {
-        {
-            type = 'client',
-            event = "qb-signrobbery:client:NoParkingSign",
-            icon = 'fas fa-user-secret',
-            label = 'Steal Sign',
-        }
-    },
-    distance = 4.0, 
-})
+    exports['qb-target']:AddTargetModel('prop_sign_road_04a', {
+        options = {
+            {
+                type = 'client',
+                event = "qb-signrobbery:client:NoParkingSign",
+                icon = 'fas fa-user-secret',
+                label = 'Steal Sign',
+            }
+        },
+        distance = 4.0, 
+    })
 
-exports['qb-target']:AddTargetModel('prop_sign_road_05e', {
-    options = {
-        {
-            type = 'client',
-            event = "qb-signrobbery:client:LeftTurnSign",
-            icon = 'fas fa-user-secret',
-            label = 'Steal Sign',
-        }
-    },
-    distance = 4.0, 
-})
+    exports['qb-target']:AddTargetModel('prop_sign_road_05e', {
+        options = {
+            {
+                type = 'client',
+                event = "qb-signrobbery:client:LeftTurnSign",
+                icon = 'fas fa-user-secret',
+                label = 'Steal Sign',
+            }
+        },
+        distance = 4.0, 
+    })
 
-exports['qb-target']:AddTargetModel('prop_sign_road_05f', {
-    options = {
-        {
-            type = 'client',
-            event = "qb-signrobbery:client:RightTurnSign",
-            icon = 'fas fa-user-secret',
-            label = 'Steal Sign',
-        }
-    },
-    distance = 4.0, 
-})
+    exports['qb-target']:AddTargetModel('prop_sign_road_05f', {
+        options = {
+            {
+                type = 'client',
+                event = "qb-signrobbery:client:RightTurnSign",
+                icon = 'fas fa-user-secret',
+                label = 'Steal Sign',
+            }
+        },
+        distance = 4.0, 
+    })
 
-exports['qb-target']:AddTargetModel('prop_sign_road_restriction_10', {
-    options = {
-        {
-            type = 'client',
-            event = "qb-signrobbery:client:NoTrespassingSign",
-            icon = 'fas fa-user-secret',
-            label = 'Steal Sign',
-        }
-    },
-    distance = 4.0, 
-})
+    exports['qb-target']:AddTargetModel('prop_sign_road_restriction_10', {
+        options = {
+            {
+                type = 'client',
+                event = "qb-signrobbery:client:NoTrespassingSign",
+                icon = 'fas fa-user-secret',
+                label = 'Steal Sign',
+            }
+        },
+        distance = 4.0, 
+    })
 
-exports['qb-target']:AddTargetModel('prop_sign_road_02a', {
-    options = {
-        {
-            type = 'client',
-            event = "qb-signrobbery:client:YieldSign",
-            icon = 'fas fa-user-secret',
-            label = 'Steal Sign',
-        }
-    },
-    distance = 4.0, 
-})
+    exports['qb-target']:AddTargetModel('prop_sign_road_02a', {
+        options = {
+            {
+                type = 'client',
+                event = "qb-signrobbery:client:YieldSign",
+                icon = 'fas fa-user-secret',
+                label = 'Steal Sign',
+            }
+        },
+        distance = 4.0, 
+    })
 end)
 
 --Sell Animation
@@ -483,12 +483,12 @@ RegisterNetEvent('SignRobbery:TradeAnim', function(data)
 	local pid = PlayerPedId()
 	loadAnimDict("mp_common")
 	TriggerServerEvent('SignRobbery:TradeItems', data)
-			TaskPlayAnim(pid, "mp_common", "givetake2_a", 100.0, 200.0, 0.3, 120, 0.2, 0, 0, 0)
-            TaskPlayAnim(v, "mp_common", "givetake2_a", 100.0, 200.0, 0.3, 120, 0.2, 0, 0, 0)
-            Wait(1500)
-            StopAnimTask(pid, "mp_common", "givetake2_a", 1.0)
-            StopAnimTask(v, "mp_common", "givetake2_a", 1.0)
-            RemoveAnimDict("mp_common")
+	TaskPlayAnim(pid, "mp_common", "givetake2_a", 100.0, 200.0, 0.3, 120, 0.2, 0, 0, 0)
+    Wait(1500)
+    holdingSign = false
+    TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+    StopAnimTask(pid, "mp_common", "givetake2_a", 1.0)
+    RemoveAnimDict("mp_common")
 end)
 
 --Sign Robbery To Scrap Material Event
