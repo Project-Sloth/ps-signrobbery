@@ -503,7 +503,7 @@ RegisterNetEvent('SignRobbery:Trade:Menu', function()
         { header = "Turn Left Signs", txt = "Trade", params = { event = "SignRobbery:TradeAnim", args = 6 } },
         { header = "Turn Right Signs", txt = "Trade", params = { event = "SignRobbery:TradeAnim", args = 7 } },
         { header = "No Trespassing Signs", txt = "Trade", params = { event = "SignRobbery:TradeAnim", args = 8 } },
-        { header = "Yield Signs", txt = "Trade", params = { event = "SignRobbery:TradeAnim", args = 8 } },
+        { header = "Yield Signs", txt = "Trade", params = { event = "SignRobbery:TradeAnim", args = 9 } },
         { header = "", txt = "❌ Close", params = { event = "SignRobbery:CloseMenu" } },
     })
 end)
