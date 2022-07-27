@@ -10,11 +10,9 @@ end)
 
 --Functions
 local function AlertCops()
-    --- Default QBCore Dispatch
-    ----------------------------------------------------------------------
-    --TriggerServerEvent('police:server:policeAlert', 'Sign being stolen')
-    ----------------------------------------------------------------------
-    -- Will add qb-dispatch (Project Sloth) later
+    -- README: UNCOMMENT WHICHEVER ALERT YOU WANNA USE UNLESS YOU USE A DIFFERENT ALERT SYSTEM
+    --TriggerServerEvent('police:server:policeAlert', 'Sign being stolen') -- Default QBCore Dispatch
+    --exports['ps-dispatch']:SignRobbery() -- ps-dispatch
 end
 
 local function loadAnimDict(dict)
