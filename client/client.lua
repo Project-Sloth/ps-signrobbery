@@ -47,7 +47,7 @@ RegisterNetEvent("qb-signrobbery:client:StopSign", function(data)
             local object = {coords = coords, model = -949234773}
             TriggerServerEvent("qb-signrobbery:server:delete", object)
             AlertCops()
-        end)
+        end, "stopsign")
     end
 end)
 
@@ -73,7 +73,7 @@ RegisterNetEvent("qb-signrobbery:client:WalkingManSign", function(data)
             local object = {coords = coords, model = 1502931467}
             TriggerServerEvent("qb-signrobbery:server:delete", object)
             AlertCops()
-        end)
+        end, "walkingmansign")
     end
 end)
 
@@ -99,7 +99,7 @@ RegisterNetEvent("qb-signrobbery:client:DontBlockIntersectionSign", function(dat
             local object = {coords = coords, model = 1191039009}
             TriggerServerEvent("qb-signrobbery:server:delete", object)
             AlertCops()
-        end)
+        end, "dontblockintersectionsign")
     end
 end)
 
@@ -125,7 +125,7 @@ RegisterNetEvent("qb-signrobbery:client:UTurnSign", function(data)
             local object = {coords = coords, model = 4138610559}
             TriggerServerEvent("qb-signrobbery:server:delete", object)
             AlertCops()
-        end)
+        end, "uturnsign")
     end
 end)
 
@@ -151,7 +151,7 @@ RegisterNetEvent("qb-signrobbery:client:NoParkingSign", function(data)
             local object = {coords = coords, model = 3830972543}
             TriggerServerEvent("qb-signrobbery:server:delete", object)
             AlertCops()
-        end)
+        end, "noparkingsign")
     end
 end)
 
@@ -177,7 +177,7 @@ RegisterNetEvent("qb-signrobbery:client:LeftTurnSign", function(data)
             local object = {coords = coords, model = 2643325436}
             TriggerServerEvent("qb-signrobbery:server:delete", object)
             AlertCops()
-        end)
+        end, "leftturnsign")
     end
 end)
 
@@ -203,7 +203,7 @@ RegisterNetEvent("qb-signrobbery:client:RightTurnSign", function(data)
             local object = {coords = coords, model = 793482617}
             TriggerServerEvent("qb-signrobbery:server:delete", object)
             AlertCops()
-        end)
+        end, "rightturnsign")
     end
 end)
 
@@ -229,7 +229,7 @@ RegisterNetEvent("qb-signrobbery:client:NoTrespassingSign", function(data)
             local object = {coords = coords, model = 1021214550}
             TriggerServerEvent("qb-signrobbery:server:delete", object)
             AlertCops()
-        end)
+        end, "notrespassingsign")
     end
 end)
 
@@ -255,7 +255,7 @@ RegisterNetEvent("qb-signrobbery:client:YieldSign", function(data)
             local object = {coords = coords, model = 3654973172}
             TriggerServerEvent("qb-signrobbery:server:delete", object)
             AlertCops()
-        end)
+        end, "yieldsign")
     end
 end)
 
