@@ -7,7 +7,7 @@ A unique script that gives you the ability to pick up, hold and steal signs arou
 
 ### Dependencies:
 * [qb-target](https://github.com/BerkieBb/qb-target)
-* [ps-ui(https://github.com/Project-Sloth/ps-ui)
+* [ps-ui](https://github.com/Project-Sloth/ps-ui)
 * [dpemotes](https://github.com/andristum/dpemotes)
 
 <br>
