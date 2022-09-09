@@ -26,237 +26,228 @@ end
 
 --Events
 RegisterNetEvent("qb-signrobbery:client:StopSign", function(data)
-    local seconds = math.random(9,12)
-    local circles = math.random(1,3)
     local ped = PlayerPedId()
-    local success = exports['qb-lock']:StartLockPickCircle(circles, seconds, success)
-    if success then
-        loadAnimDict("amb@prop_human_bum_bin@base")
-        TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
-        QBCore.Functions.Progressbar("robbing_sign", "Stealing Stop Sign..", math.random(5000, 7000), false, true, {
-            disableMovement = true,
-            disableCarMovement = true,
-            disableMouse = false,
-            disableCombat = true,
-        }, {}, {}, function()
-        end, function()
-            local coords = GetEntityCoords(data.entity)
-            SetEntityAsMissionEntity(data.entity, true, true)
-            StopAnimTask(ped, "amb@prop_human_bum_bin@base", "base", 1.0)
-            DeleteEntity(data.entity)
-            local object = {coords = coords, model = -949234773}
-            TriggerServerEvent("qb-signrobbery:server:delete", object)
-            AlertCops()
-        end)
-    end
+    exports['ps-ui']:Circle(function(success)
+        if success then
+            loadAnimDict("amb@prop_human_bum_bin@base")
+            TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
+            QBCore.Functions.Progressbar("robbing_sign", "Stealing Stop Sign..", math.random(5000, 7000), false, true, {
+                disableMovement = true,
+                disableCarMovement = true,
+                disableMouse = false,
+                disableCombat = true,
+            }, {}, {}, function()
+            end, function()
+                local coords = GetEntityCoords(data.entity)
+                SetEntityAsMissionEntity(data.entity, true, true)
+                StopAnimTask(ped, "amb@prop_human_bum_bin@base", "base", 1.0)
+                DeleteEntity(data.entity)
+                local object = {coords = coords, model = -949234773}
+                TriggerServerEvent("qb-signrobbery:server:delete", object)
+                AlertCops()
+            end)
+        end
+    end, 2, 6)
 end)
 
 RegisterNetEvent("qb-signrobbery:client:WalkingManSign", function(data)
-    local seconds = math.random(9,12)
-    local circles = math.random(1,3)
     local ped = PlayerPedId()
-    local success = exports['qb-lock']:StartLockPickCircle(circles, seconds, success)
-    if success then
-        loadAnimDict("amb@prop_human_bum_bin@base")
-        TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
-        QBCore.Functions.Progressbar("robbing_sign", "Stealing Pedestrian Sign..", math.random(5000, 7000), false, true, {
-            disableMovement = true,
-            disableCarMovement = true,
-            disableMouse = false,
-            disableCombat = true,
-        }, {}, {}, function()
-        end, function()
-            local coords = GetEntityCoords(data.entity)
-            SetEntityAsMissionEntity(data.entity, true, true)
-            StopAnimTask(ped, "amb@prop_human_bum_bin@base", "base", 1.0)
-            DeleteEntity(data.entity)
-            local object = {coords = coords, model = 1502931467}
-            TriggerServerEvent("qb-signrobbery:server:delete", object)
-            AlertCops()
-        end)
-    end
+    exports['ps-ui']:Circle(function(success)
+        if success then
+            loadAnimDict("amb@prop_human_bum_bin@base")
+            TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
+            QBCore.Functions.Progressbar("robbing_sign", "Stealing Pedestrian Sign..", math.random(5000, 7000), false, true, {
+                disableMovement = true,
+                disableCarMovement = true,
+                disableMouse = false,
+                disableCombat = true,
+            }, {}, {}, function()
+            end, function()
+                local coords = GetEntityCoords(data.entity)
+                SetEntityAsMissionEntity(data.entity, true, true)
+                StopAnimTask(ped, "amb@prop_human_bum_bin@base", "base", 1.0)
+                DeleteEntity(data.entity)
+                local object = {coords = coords, model = 1502931467}
+                TriggerServerEvent("qb-signrobbery:server:delete", object)
+                AlertCops()
+            end)
+        end
+    end, 2, 6)
 end)
 
 RegisterNetEvent("qb-signrobbery:client:DontBlockIntersectionSign", function(data)
-    local seconds = math.random(9,12)
-    local circles = math.random(1,3)
     local ped = PlayerPedId()
-    local success = exports['qb-lock']:StartLockPickCircle(circles, seconds, success)
-    if success then
-        loadAnimDict("amb@prop_human_bum_bin@base")
-        TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
-        QBCore.Functions.Progressbar("robbing_sign", "Stealing Intersection Sign..", math.random(5000, 7000), false, true, {
-            disableMovement = true,
-            disableCarMovement = true,
-            disableMouse = false,
-            disableCombat = true,
-        }, {}, {}, function()
-        end, function()
-            local coords = GetEntityCoords(data.entity)
-            SetEntityAsMissionEntity(data.entity, true, true)
-            StopAnimTask(ped, "amb@prop_human_bum_bin@base", "base", 1.0)
-            DeleteEntity(data.entity)
-            local object = {coords = coords, model = 1191039009}
-            TriggerServerEvent("qb-signrobbery:server:delete", object)
-            AlertCops()
-        end)
-    end
+    exports['ps-ui']:Circle(function(success)
+        if success then
+            loadAnimDict("amb@prop_human_bum_bin@base")
+            TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
+            QBCore.Functions.Progressbar("robbing_sign", "Stealing Intersection Sign..", math.random(5000, 7000), false, true, {
+                disableMovement = true,
+                disableCarMovement = true,
+                disableMouse = false,
+                disableCombat = true,
+            }, {}, {}, function()
+            end, function()
+                local coords = GetEntityCoords(data.entity)
+                SetEntityAsMissionEntity(data.entity, true, true)
+                StopAnimTask(ped, "amb@prop_human_bum_bin@base", "base", 1.0)
+                DeleteEntity(data.entity)
+                local object = {coords = coords, model = 1191039009}
+                TriggerServerEvent("qb-signrobbery:server:delete", object)
+                AlertCops()
+            end)
+        end
+    end, 2, 6)
 end)
 
 RegisterNetEvent("qb-signrobbery:client:UTurnSign", function(data)
-    local seconds = math.random(9,12)
-    local circles = math.random(1,3)
     local ped = PlayerPedId()
-    local success = exports['qb-lock']:StartLockPickCircle(circles, seconds, success)
-    if success then
-        loadAnimDict("amb@prop_human_bum_bin@base")
-        TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
-        QBCore.Functions.Progressbar("robbing_sign", "Stealing U Turn Sign..", math.random(5000, 7000), false, true, {
-            disableMovement = true,
-            disableCarMovement = true,
-            disableMouse = false,
-            disableCombat = true,
-        }, {}, {}, function()
-        end, function()
-            local coords = GetEntityCoords(data.entity)
-            SetEntityAsMissionEntity(data.entity, true, true)
-            StopAnimTask(ped, "amb@prop_human_bum_bin@base", "base", 1.0)
-            DeleteEntity(data.entity)
-            local object = {coords = coords, model = 4138610559}
-            TriggerServerEvent("qb-signrobbery:server:delete", object)
-            AlertCops()
-        end)
-    end
+    exports['ps-ui']:Circle(function(success)
+        if success then
+            loadAnimDict("amb@prop_human_bum_bin@base")
+            TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
+            QBCore.Functions.Progressbar("robbing_sign", "Stealing U Turn Sign..", math.random(5000, 7000), false, true, {
+                disableMovement = true,
+                disableCarMovement = true,
+                disableMouse = false,
+                disableCombat = true,
+            }, {}, {}, function()
+            end, function()
+                local coords = GetEntityCoords(data.entity)
+                SetEntityAsMissionEntity(data.entity, true, true)
+                StopAnimTask(ped, "amb@prop_human_bum_bin@base", "base", 1.0)
+                DeleteEntity(data.entity)
+                local object = {coords = coords, model = 4138610559}
+                TriggerServerEvent("qb-signrobbery:server:delete", object)
+                AlertCops()
+            end)
+        end
+    end, 2, 6)
 end)
 
 RegisterNetEvent("qb-signrobbery:client:NoParkingSign", function(data)
-    local seconds = math.random(9,12)
-    local circles = math.random(1,3)
     local ped = PlayerPedId()
-    local success = exports['qb-lock']:StartLockPickCircle(circles, seconds, success)
-    if success then
-        loadAnimDict("amb@prop_human_bum_bin@base")
-        TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
-        QBCore.Functions.Progressbar("robbing_sign", "Stealing No Parking Sign..", math.random(5000, 7000), false, true, {
-            disableMovement = true,
-            disableCarMovement = true,
-            disableMouse = false,
-            disableCombat = true,
-        }, {}, {}, function()
-        end, function()
-            local coords = GetEntityCoords(data.entity)
-            SetEntityAsMissionEntity(data.entity, true, true)
-            StopAnimTask(ped, "amb@prop_human_bum_bin@base", "base", 1.0)
-            DeleteEntity(data.entity)
-            local object = {coords = coords, model = 3830972543}
-            TriggerServerEvent("qb-signrobbery:server:delete", object)
-            AlertCops()
-        end)
-    end
+    exports['ps-ui']:Circle(function(success)
+        if success then
+            loadAnimDict("amb@prop_human_bum_bin@base")
+            TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
+            QBCore.Functions.Progressbar("robbing_sign", "Stealing No Parking Sign..", math.random(5000, 7000), false, true, {
+                disableMovement = true,
+                disableCarMovement = true,
+                disableMouse = false,
+                disableCombat = true,
+            }, {}, {}, function()
+            end, function()
+                local coords = GetEntityCoords(data.entity)
+                SetEntityAsMissionEntity(data.entity, true, true)
+                StopAnimTask(ped, "amb@prop_human_bum_bin@base", "base", 1.0)
+                DeleteEntity(data.entity)
+                local object = {coords = coords, model = 3830972543}
+                TriggerServerEvent("qb-signrobbery:server:delete", object)
+                AlertCops()
+            end)
+        end
+    end, 2, 6)
 end)
 
 RegisterNetEvent("qb-signrobbery:client:LeftTurnSign", function(data)
-    local seconds = math.random(9,12)
-    local circles = math.random(1,3)
     local ped = PlayerPedId()
-    local success = exports['qb-lock']:StartLockPickCircle(circles, seconds, success)
-    if success then
-        loadAnimDict("amb@prop_human_bum_bin@base")
-        TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
-        QBCore.Functions.Progressbar("robbing_sign", "Stealing Left Turn Sign..", math.random(5000, 7000), false, true, {
-            disableMovement = true,
-            disableCarMovement = true,
-            disableMouse = false,
-            disableCombat = true,
-        }, {}, {}, function()
-        end, function()
-            local coords = GetEntityCoords(data.entity)
-            SetEntityAsMissionEntity(data.entity, true, true)
-            StopAnimTask(ped, "amb@prop_human_bum_bin@base", "base", 1.0)
-            DeleteEntity(data.entity)
-            local object = {coords = coords, model = 2643325436}
-            TriggerServerEvent("qb-signrobbery:server:delete", object)
-            AlertCops()
-        end)
-    end
+    exports['ps-ui']:Circle(function(success)
+        if success then
+            loadAnimDict("amb@prop_human_bum_bin@base")
+            TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
+            QBCore.Functions.Progressbar("robbing_sign", "Stealing Left Turn Sign..", math.random(5000, 7000), false, true, {
+                disableMovement = true,
+                disableCarMovement = true,
+                disableMouse = false,
+                disableCombat = true,
+            }, {}, {}, function()
+            end, function()
+                local coords = GetEntityCoords(data.entity)
+                SetEntityAsMissionEntity(data.entity, true, true)
+                StopAnimTask(ped, "amb@prop_human_bum_bin@base", "base", 1.0)
+                DeleteEntity(data.entity)
+                local object = {coords = coords, model = 2643325436}
+                TriggerServerEvent("qb-signrobbery:server:delete", object)
+                AlertCops()
+            end)
+        end
+    end, 2, 6)
 end)
 
 RegisterNetEvent("qb-signrobbery:client:RightTurnSign", function(data)
-    local seconds = math.random(9,12)
-    local circles = math.random(1,3)
     local ped = PlayerPedId()
-    local success = exports['qb-lock']:StartLockPickCircle(circles, seconds, success)
-    if success then
-        loadAnimDict("amb@prop_human_bum_bin@base")
-        TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
-        QBCore.Functions.Progressbar("robbing_sign", "Stealing Right Turn Sign..", math.random(5000, 7000), false, true, {
-            disableMovement = true,
-            disableCarMovement = true,
-            disableMouse = false,
-            disableCombat = true,
-        }, {}, {}, function()
-        end, function()
-            local coords = GetEntityCoords(data.entity)
-            SetEntityAsMissionEntity(data.entity, true, true)
-            StopAnimTask(ped, "amb@prop_human_bum_bin@base", "base", 1.0)
-            DeleteEntity(data.entity)
-            local object = {coords = coords, model = 793482617}
-            TriggerServerEvent("qb-signrobbery:server:delete", object)
-            AlertCops()
-        end)
-    end
+    exports['ps-ui']:Circle(function(success)
+        if success then
+            loadAnimDict("amb@prop_human_bum_bin@base")
+            TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
+            QBCore.Functions.Progressbar("robbing_sign", "Stealing Right Turn Sign..", math.random(5000, 7000), false, true, {
+                disableMovement = true,
+                disableCarMovement = true,
+                disableMouse = false,
+                disableCombat = true,
+            }, {}, {}, function()
+            end, function()
+                local coords = GetEntityCoords(data.entity)
+                SetEntityAsMissionEntity(data.entity, true, true)
+                StopAnimTask(ped, "amb@prop_human_bum_bin@base", "base", 1.0)
+                DeleteEntity(data.entity)
+                local object = {coords = coords, model = 793482617}
+                TriggerServerEvent("qb-signrobbery:server:delete", object)
+                AlertCops()
+            end)
+        end
+    end, 2, 6)
 end)
 
 RegisterNetEvent("qb-signrobbery:client:NoTrespassingSign", function(data)
-    local seconds = math.random(9,12)
-    local circles = math.random(1,3)
     local ped = PlayerPedId()
-    local success = exports['qb-lock']:StartLockPickCircle(circles, seconds, success)
-    if success then
-        loadAnimDict("amb@prop_human_bum_bin@base")
-        TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
-        QBCore.Functions.Progressbar("robbing_sign", "Stealing No Trespassing Sign..", math.random(5000, 7000), false, true, {
-            disableMovement = true,
-            disableCarMovement = true,
-            disableMouse = false,
-            disableCombat = true,
-        }, {}, {}, function()
-        end, function()
-            local coords = GetEntityCoords(data.entity)
-            SetEntityAsMissionEntity(data.entity, true, true)
-            StopAnimTask(ped, "amb@prop_human_bum_bin@base", "base", 1.0)
-            DeleteEntity(data.entity)
-            local object = {coords = coords, model = 1021214550}
-            TriggerServerEvent("qb-signrobbery:server:delete", object)
-            AlertCops()
-        end)
-    end
+    exports['ps-ui']:Circle(function(success)
+        if success then
+            loadAnimDict("amb@prop_human_bum_bin@base")
+            TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
+            QBCore.Functions.Progressbar("robbing_sign", "Stealing No Trespassing Sign..", math.random(5000, 7000), false, true, {
+                disableMovement = true,
+                disableCarMovement = true,
+                disableMouse = false,
+                disableCombat = true,
+            }, {}, {}, function()
+            end, function()
+                local coords = GetEntityCoords(data.entity)
+                SetEntityAsMissionEntity(data.entity, true, true)
+                StopAnimTask(ped, "amb@prop_human_bum_bin@base", "base", 1.0)
+                DeleteEntity(data.entity)
+                local object = {coords = coords, model = 1021214550}
+                TriggerServerEvent("qb-signrobbery:server:delete", object)
+                AlertCops()
+            end)
+        end
+    end, 2, 6)
 end)
 
 RegisterNetEvent("qb-signrobbery:client:YieldSign", function(data)
-    local seconds = math.random(9,12)
-    local circles = math.random(1,3)
     local ped = PlayerPedId()
-    local success = exports['qb-lock']:StartLockPickCircle(circles, seconds, success)
-    if success then
-        loadAnimDict("amb@prop_human_bum_bin@base")
-        TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
-        QBCore.Functions.Progressbar("robbing_sign", "Stealing Yield Sign..", math.random(5000, 7000), false, true, {
-            disableMovement = true,
-            disableCarMovement = true,
-            disableMouse = false,
-            disableCombat = true,
-        }, {}, {}, function()
-        end, function()
-            local coords = GetEntityCoords(data.entity)
-            SetEntityAsMissionEntity(data.entity, true, true)
-            StopAnimTask(ped, "amb@prop_human_bum_bin@base", "base", 1.0)
-            DeleteEntity(data.entity)
-            local object = {coords = coords, model = 3654973172}
-            TriggerServerEvent("qb-signrobbery:server:delete", object)
-            AlertCops()
-        end)
-    end
+    exports['ps-ui']:Circle(function(success)
+        if success then
+            loadAnimDict("amb@prop_human_bum_bin@base")
+            TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
+            QBCore.Functions.Progressbar("robbing_sign", "Stealing Yield Sign..", math.random(5000, 7000), false, true, {
+                disableMovement = true,
+                disableCarMovement = true,
+                disableMouse = false,
+                disableCombat = true,
+            }, {}, {}, function()
+            end, function()
+                local coords = GetEntityCoords(data.entity)
+                SetEntityAsMissionEntity(data.entity, true, true)
+                StopAnimTask(ped, "amb@prop_human_bum_bin@base", "base", 1.0)
+                DeleteEntity(data.entity)
+                local object = {coords = coords, model = 3654973172}
+                TriggerServerEvent("qb-signrobbery:server:delete", object)
+                AlertCops()
+            end)
+        end
+    end, 2, 6)
 end)
 
 --Emote Events
