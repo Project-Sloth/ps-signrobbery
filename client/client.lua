@@ -248,44 +248,72 @@ RegisterNetEvent("qb-signrobbery:client:YieldSign", function(data)
     end, 2, 6)
 end)
 
+local prop = nil
+function AddPropToPlayerAndAnim(prop1, bone, off1, off2, off3, rot1, rot2, rot3)
+    loadAnimDict("amb@world_human_janitor@male@base")
+    local Player = PlayerPedId()
+    local x,y,z = table.unpack(GetEntityCoords(Player))
+    if not HasModelLoaded(prop1) then
+        LoadPropDict(prop1)
+    end
+    prop = CreateObject(GetHashKey(prop1), x, y, z+0.2,  true,  true, true)
+    AttachEntityToEntity(prop, Player, GetPedBoneIndex(Player, bone), off1, off2, off3, rot1, rot2, rot3, true, true, false, true, 1, true)
+    SetModelAsNoLongerNeeded(prop1)
+    TaskPlayAnim(Player, "amb@world_human_janitor@male@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
+
+    CreateThread(function()
+        while holdingSign do
+            Wait(1000)
+            if not IsEntityPlayingAnim(PlayerPedId(), "amb@world_human_janitor@male@base", "base", 3) and holdingSign then
+                holdingSign = false
+                DeleteEntity(prop)
+            end
+        end
+    end)
+end
+
 --Emote Events
 RegisterNetEvent("qb-signrobbery:use:StopSign", function(src)
     if not holdingSign then
         holdingSign = true
-        TriggerEvent('animations:client:EmoteCommandStart', {"stopsign"})
+        AddPropToPlayerAndAnim("prop_sign_road_01a", 57005, 0.10, -1.0, 0.0, -90.0, -250.0, 0.0)
     else
         holdingSign = false
-        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        DeleteEntity(prop)
+        ClearPedSecondaryTask(PlayerPedId())
     end
 end)
 
 RegisterNetEvent("qb-signrobbery:use:WalkingManSign", function(src) 
     if not holdingSign then
         holdingSign = true
-        TriggerEvent('animations:client:EmoteCommandStart', {"walkingmansign"})
+        AddPropToPlayerAndAnim("prop_sign_road_05a", 57005, 0.10, -1.0, 0.0, -90.0, -250.0, 0.0)
     else
         holdingSign = false
-        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        DeleteEntity(prop)
+        ClearPedSecondaryTask(PlayerPedId())
     end
 end)
 
 RegisterNetEvent("qb-signrobbery:use:DontBlockIntersectionSign", function(src)
     if not holdingSign then
         holdingSign = true
-        TriggerEvent('animations:client:EmoteCommandStart', {"dontblockintersectionsign"})
+        AddPropToPlayerAndAnim("prop_sign_road_03e", 57005, 0.10, -1.0, 0.0, -90.0, -250.0, 0.0)
     else
         holdingSign = false
-        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        DeleteEntity(prop)
+        ClearPedSecondaryTask(PlayerPedId())
     end
 end)
 
 RegisterNetEvent("qb-signrobbery:use:UturnSign", function(src)
     if not holdingSign then
         holdingSign = true
-        TriggerEvent('animations:client:EmoteCommandStart', {"uturnsign"})
+        AddPropToPlayerAndAnim("prop_sign_road_03m", 57005, 0.10, -1.0, 0.0, -90.0, -250.0, 0.0)
     else
         holdingSign = false
-        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        DeleteEntity(prop)
+        ClearPedSecondaryTask(PlayerPedId())
     end
     
 end)
@@ -293,10 +321,11 @@ end)
 RegisterNetEvent("qb-signrobbery:use:NoParkingSign", function(src)
     if not holdingSign then
         holdingSign = true
-        TriggerEvent('animations:client:EmoteCommandStart', {"noparkingsign"})
+        AddPropToPlayerAndAnim("prop_sign_road_04a", 57005, 0.10, -1.0, 0.0, -90.0, -250.0, 0.0)
     else
         holdingSign = false
-        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        DeleteEntity(prop)
+        ClearPedSecondaryTask(PlayerPedId())
     end
     
 end)
@@ -304,10 +333,11 @@ end)
 RegisterNetEvent("qb-signrobbery:use:LeftTurnSign", function(src)
     if not holdingSign then
         holdingSign = true
-        TriggerEvent('animations:client:EmoteCommandStart', {"leftturnsign"})
+        AddPropToPlayerAndAnim("prop_sign_road_05e", 57005, 0.10, -1.0, 0.0, -90.0, -250.0, 0.0)
     else
         holdingSign = false
-        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        DeleteEntity(prop)
+        ClearPedSecondaryTask(PlayerPedId())
     end
     
 end)
@@ -315,10 +345,11 @@ end)
 RegisterNetEvent("qb-signrobbery:use:RightTurnSign", function(src)
     if not holdingSign then
         holdingSign = true
-        TriggerEvent('animations:client:EmoteCommandStart', {"rightturnsign"})
+        AddPropToPlayerAndAnim("prop_sign_road_05f", 57005, 0.10, -1.0, 0.0, -90.0, -250.0, 0.0)
     else
         holdingSign = false
-        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        DeleteEntity(prop)
+        ClearPedSecondaryTask(PlayerPedId())
     end
     
 end)
@@ -326,10 +357,11 @@ end)
 RegisterNetEvent("qb-signrobbery:use:NoTrespassingSign", function(src)
     if not holdingSign then
         holdingSign = true
-        TriggerEvent('animations:client:EmoteCommandStart', {"notrespassingsign"})
+        AddPropToPlayerAndAnim("prop_sign_road_restriction_10", 57005, 0.10, -1.0, 0.0, -90.0, -250.0, 0.0)
     else
         holdingSign = false
-        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        DeleteEntity(prop)
+        ClearPedSecondaryTask(PlayerPedId())
     end
     
 end)
@@ -337,10 +369,11 @@ end)
 RegisterNetEvent("qb-signrobbery:use:YieldSign", function(src)
     if not holdingSign then
         holdingSign = true
-        TriggerEvent('animations:client:EmoteCommandStart', {"yieldsign"})
+        AddPropToPlayerAndAnim("prop_sign_road_02a", 57005, 0.10, -1.0, 0.0, -90.0, -250.0, 0.0)
     else
         holdingSign = false
-        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        DeleteEntity(prop)
+        ClearPedSecondaryTask(PlayerPedId())
     end
     
 end)
