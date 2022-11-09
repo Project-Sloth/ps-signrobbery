@@ -56,7 +56,7 @@ Then copy this snippet above and paste it at the very bottom of file as shown in
 <details>
 <summary>DpEmotes v1 & v2</summary>
 <br>
-Navigate to **dpemotes/client/AnimationList.lua** and add the following:
+Navigate to **dpemotes/client/AnimationList.lua**:
 
 ```lua
       ["stopsign"] = {"amb@world_human_janitor@male@base", "base", "Stop Sign", AnimationOptions =
@@ -132,6 +132,9 @@ Navigate to **dpemotes/client/AnimationList.lua** and add the following:
        EmoteMoving = true,
    }},
 ```
+Then copy this snippet above and paste it at the very bottom of file as shown in the GIF
+
+![Code_mGiMT4Cq6D](https://user-images.githubusercontent.com/91661118/170383828-72f8baa4-b05b-49b0-9170-bd766d04a95e.gif)
 </details>
 
 <details>
