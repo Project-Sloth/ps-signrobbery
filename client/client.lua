@@ -22,6 +22,14 @@ local function loadAnimDict(dict)
     end
 end
 
+local function LoadPropDict(model)
+    while not HasModelLoaded(GetHashKey(model)) do
+        RequestModel(GetHashKey(model))
+        Wait(10)
+    end
+end
+
+
 --Events
 RegisterNetEvent("qb-signrobbery:client:StopSign", function(data)
     local ped = PlayerPedId()
