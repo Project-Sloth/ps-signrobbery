@@ -109,6 +109,7 @@ RegisterServerEvent("SignRobbery:TradeItems", function(data)
 	if data == 1 then
 		if Player.Functions.GetItemByName('stopsign') ~= nil and Player.Functions.GetItemByName('stopsign').amount >= 1 then
 			Player.Functions.RemoveItem("stopsign", 1)
+			TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["stopsign"], 'remove', 1)	
 			Citizen.Wait(500)
 			for i = 1, 5, math.random(1,2) do
 				randomItem = Config.Items[math.random(1, #Config.Items)]
