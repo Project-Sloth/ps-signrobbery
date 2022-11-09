@@ -252,40 +252,72 @@ end)
 RegisterNetEvent("qb-signrobbery:use:StopSign", function(src)
     if not holdingSign then
         holdingSign = true
-        TriggerEvent('animations:client:EmoteCommandStart', {"stopsign"})
+        if Config.DpEmotesV3 then
+            exports.dpemotes:PlayRegisteredEmote('stopsign')
+        else
+            TriggerEvent('animations:client:EmoteCommandStart', {"stopsign"})
+        end
     else
         holdingSign = false
-        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        if Config.DpEmotesV3 then
+            exports.dpemotes:CancelAnimation()
+        else
+            TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        end
     end
 end)
 
 RegisterNetEvent("qb-signrobbery:use:WalkingManSign", function(src) 
     if not holdingSign then
         holdingSign = true
-        TriggerEvent('animations:client:EmoteCommandStart', {"walkingmansign"})
+        if Config.DpEmotesV3 then
+            exports.dpemotes:PlayRegisteredEmote('walkingmansign')
+        else
+            TriggerEvent('animations:client:EmoteCommandStart', {"walkingmansign"})
+        end
     else
         holdingSign = false
-        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        if Config.DpEmotesV3 then
+            exports.dpemotes:CancelAnimation()
+        else
+            TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        end
     end
 end)
 
 RegisterNetEvent("qb-signrobbery:use:DontBlockIntersectionSign", function(src)
     if not holdingSign then
         holdingSign = true
-        TriggerEvent('animations:client:EmoteCommandStart', {"dontblockintersectionsign"})
+        if Config.DpEmotesV3 then
+            exports.dpemotes:PlayRegisteredEmote('dontblockintersectionsign')
+        else
+            TriggerEvent('animations:client:EmoteCommandStart', {"dontblockintersectionsign"})
+        end
     else
         holdingSign = false
-        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        if Config.DpEmotesV3 then
+            exports.dpemotes:CancelAnimation()
+        else
+            TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        end
     end
 end)
 
 RegisterNetEvent("qb-signrobbery:use:UturnSign", function(src)
     if not holdingSign then
         holdingSign = true
-        TriggerEvent('animations:client:EmoteCommandStart', {"uturnsign"})
+        if Config.DpEmotesV3 then
+            exports.dpemotes:PlayRegisteredEmote('uturnsign')
+        else
+            TriggerEvent('animations:client:EmoteCommandStart', {"uturnsign"})
+        end
     else
         holdingSign = false
-        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        if Config.DpEmotesV3 then
+            exports.dpemotes:CancelAnimation()
+        else
+            TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        end
     end
     
 end)
@@ -293,10 +325,18 @@ end)
 RegisterNetEvent("qb-signrobbery:use:NoParkingSign", function(src)
     if not holdingSign then
         holdingSign = true
-        TriggerEvent('animations:client:EmoteCommandStart', {"noparkingsign"})
+        if Config.DpEmotesV3 then
+            exports.dpemotes:PlayRegisteredEmote('noparkingsign')
+        else
+            TriggerEvent('animations:client:EmoteCommandStart', {"noparkingsign"})
+        end
     else
         holdingSign = false
-        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        if Config.DpEmotesV3 then
+            exports.dpemotes:CancelAnimation()
+        else
+            TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        end
     end
     
 end)
@@ -304,10 +344,18 @@ end)
 RegisterNetEvent("qb-signrobbery:use:LeftTurnSign", function(src)
     if not holdingSign then
         holdingSign = true
-        TriggerEvent('animations:client:EmoteCommandStart', {"leftturnsign"})
+        if Config.DpEmotesV3 then
+            exports.dpemotes:PlayRegisteredEmote('leftturnsign')
+        else
+            TriggerEvent('animations:client:EmoteCommandStart', {"leftturnsign"})
+        end
     else
         holdingSign = false
-        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        if Config.DpEmotesV3 then
+            exports.dpemotes:CancelAnimation()
+        else
+            TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        end
     end
     
 end)
@@ -315,10 +363,18 @@ end)
 RegisterNetEvent("qb-signrobbery:use:RightTurnSign", function(src)
     if not holdingSign then
         holdingSign = true
-        TriggerEvent('animations:client:EmoteCommandStart', {"rightturnsign"})
+        if Config.DpEmotesV3 then
+            exports.dpemotes:PlayRegisteredEmote('rightturnsign')
+        else
+            TriggerEvent('animations:client:EmoteCommandStart', {"rightturnsign"})
+        end
     else
         holdingSign = false
-        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        if Config.DpEmotesV3 then
+            exports.dpemotes:CancelAnimation()
+        else
+            TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        end
     end
     
 end)
@@ -326,10 +382,18 @@ end)
 RegisterNetEvent("qb-signrobbery:use:NoTrespassingSign", function(src)
     if not holdingSign then
         holdingSign = true
-        TriggerEvent('animations:client:EmoteCommandStart', {"notrespassingsign"})
+        if Config.DpEmotesV3 then
+            exports.dpemotes:PlayRegisteredEmote('notrespassingsign')
+        else
+            TriggerEvent('animations:client:EmoteCommandStart', {"notrespassingsign"})
+        end
     else
         holdingSign = false
-        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        if Config.DpEmotesV3 then
+            exports.dpemotes:CancelAnimation()
+        else
+            TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        end
     end
     
 end)
@@ -337,10 +401,18 @@ end)
 RegisterNetEvent("qb-signrobbery:use:YieldSign", function(src)
     if not holdingSign then
         holdingSign = true
-        TriggerEvent('animations:client:EmoteCommandStart', {"yieldsign"})
+        if Config.DpEmotesV3 then
+            exports.dpemotes:PlayRegisteredEmote('yieldsign')
+        else
+            TriggerEvent('animations:client:EmoteCommandStart', {"yieldsign"})
+        end
     else
         holdingSign = false
-        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        if Config.DpEmotesV3 then
+            exports.dpemotes:CancelAnimation()
+        else
+            TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        end
     end
     
 end)
@@ -475,7 +547,11 @@ RegisterNetEvent('SignRobbery:TradeAnim', function(data)
 	TaskPlayAnim(pid, "mp_common", "givetake2_a", 100.0, 200.0, 0.3, 120, 0.2, 0, 0, 0)
     Wait(1500)
     holdingSign = false
-    TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+    if Config.DpEmotesV3 then
+        exports.dpemotes:CancelAnimation()
+    else
+        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+    end
     StopAnimTask(pid, "mp_common", "givetake2_a", 1.0)
     RemoveAnimDict("mp_common")
 end)

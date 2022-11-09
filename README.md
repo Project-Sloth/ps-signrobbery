@@ -8,7 +8,7 @@ A unique script that gives you the ability to pick up, hold and steal signs arou
 ### Dependencies:
 * [qb-target](https://github.com/BerkieBb/qb-target)
 * [ps-ui](https://github.com/Project-Sloth/ps-ui)
-* [dpemotes](https://github.com/andristum/dpemotes)
+* [dpemotes](https://github.com/andristum/dpemotes) or [dpemotes v3](https://github.com/scullyy/dpemotes)
 
 <br>
 <br>
@@ -52,7 +52,11 @@ Then copy this snippet above and paste it at the very bottom of file as shown in
 ![Code_xLLPuFXZuK](https://user-images.githubusercontent.com/91661118/170383607-9ed085c2-e6d6-40a1-9f03-71f025eb3476.gif)
 
 ### Step 4: 
-Keep your entire resources folder with Visual Studio Code (or whichever program you use) and navigate to **dpemotes/client/AnimationList.lua**
+
+<details>
+<summary>DpEmotes v1 & v2</summary>
+<br>
+Navigate to **dpemotes/client/AnimationList.lua** and add the following:
 
 ```lua
       ["stopsign"] = {"amb@world_human_janitor@male@base", "base", "Stop Sign", AnimationOptions =
@@ -128,10 +132,13 @@ Keep your entire resources folder with Visual Studio Code (or whichever program 
        EmoteMoving = true,
    }},
 ```
+</details>
 
-Then copy this snippet above and paste it at the very bottom of file as shown in the GIF
-
-![Code_mGiMT4Cq6D](https://user-images.githubusercontent.com/91661118/170383828-72f8baa4-b05b-49b0-9170-bd766d04a95e.gif)
+<details>
+<summary>DpEmotes v1 & v2</summary>
+<br>
+Compatibility is automated.
+</details>
 
 <br>
 <br>
