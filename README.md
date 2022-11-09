@@ -135,7 +135,7 @@ Navigate to **dpemotes/client/AnimationList.lua** and add the following:
 </details>
 
 <details>
-<summary>DpEmotes v1 & v2</summary>
+<summary>DpEmotes v3</summary>
 <br>
 Compatibility is automated.
 </details>
