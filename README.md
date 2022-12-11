@@ -83,9 +83,3 @@ Here's a few showcased examples while using ps-signrobbery.
 
 ### Credits:
 Huge thanks to [Hyper](https://github.com/itsHyper) and [Snipe (pushkart2)](https://github.com/pushkart2) This release wouldn't be possible without them.
-
-# DMCA Protection Certificate
-![image](https://user-images.githubusercontent.com/82112471/171913955-7d3f409e-e8de-4977-b5c3-bd23b14f980a.png)
-
-##### Copyright © 2022 Project Sloth. All rights reserved.
-
