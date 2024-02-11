@@ -34,7 +34,7 @@ Open the ps-signrobbery resource you just implemented in your resources folder a
 
 ### Step 3: 
 Open your entire resources folder with Visual Studio Code (or whichever program you use) and navigate to **qb-core/shared/items.lua**
-
+#older qb-core
 ```lua
 ["stopsign"] = {["name"] = "stopsign", ["label"] = "Stop Sign", ["weight"] = 1, ["type"] = "item", ["image"] = "stopsign.png", ["unique"] = false, ["useable"] = true, ["shouldClose"] = true, ["combinable"] = nil, ["description"] = "Stop Sign"},
 ["walkingmansign"] = {["name"] = "walkingmansign", ["label"] = "Pedestrian Sign", ["weight"] = 1, ["type"] = "item", ["image"] = "walkingmansign.png", ["unique"] = false, ["useable"] = true, ["shouldClose"] = true, ["combinable"] = nil, ["description"] = "Pedestrian Sign"},
@@ -46,7 +46,18 @@ Open your entire resources folder with Visual Studio Code (or whichever program 
 ["notrespassingsign"] = {["name"] = "notrespassingsign", ["label"] = "No Trespassing Sign", ["weight"] = 1, ["type"] = "item", ["image"] = "notrespassingsign.png", ["unique"] = false, ["useable"] = true, ["shouldClose"] = true, ["combinable"] = nil, ["description"] = "No Trespassing Sign"},
 ["yieldsign"] = {["name"] = "yieldsign", ["label"] = "Yield Sign", ["weight"] = 1, ["type"] = "item", ["image"] = "yieldsign.png", ["unique"] = false, ["useable"] = true, ["shouldClose"] = true, ["combinable"] = nil, ["description"] = "Yield Sign"},
 ```
-
+#new qb-core
+```lua
+stopsign                        = {name = "stopsign", label = "Stop Sign", weight = 1, type = "item", image = "stopsign.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "Stop Sign"},
+walkingmansign                  = {name = "walkingmansign", label = "Pedestrian Sign", weight = 1, type = "item", image = "walkingmansign.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "Pedestrian Sign"},
+dontblockintersectionsign       = {name = "dontblockintersectionsign", label = "Intersection Sign", weight = 1, type = "item", image = "dontblockintersectionsign.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "Intersection Sign"},
+uturnsign                       = {name = "uturnsign", label = "U Turn Sign", weight = 1, type = "item", image = "uturnsign.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "U Turn Sign"},
+noparkingsign                   = {name = "noparkingsign", label = "No Parking Sign", weight = 1, type = "item", image = "noparkingsign.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "No Parking Sign"},
+leftturnsign                    = {name = "leftturnsign", label = "Left Turn Sign", weight = 1, type = "item", image = "leftturnsign.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "Left Turn Sign"},
+rightturnsign                   = {name = "rightturnsign", label = "Right Turn Sign", weight = 1, type = "item", image = "rightturnsign.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "Right Turn Sign"},
+notrespassingsign               = {name = "notrespassingsign", label = "No Trespassing Sign", weight = 1, type = "item", image = "notrespassingsign.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "No Trespassing Sign"},
+yieldsign                       = {name = "yieldsign", label = "Yield Sign", weight = 1, type = "item", image = "yieldsign.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "Yield Sign"},
+```
 Then copy this snippet above and paste it at the very bottom of file as shown in the GIF
 
 ![Code_xLLPuFXZuK](https://user-images.githubusercontent.com/91661118/170383607-9ed085c2-e6d6-40a1-9f03-71f025eb3476.gif)
