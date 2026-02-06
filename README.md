@@ -1,3 +1,7 @@
+# Archiving Older Repos (Focus on ps-mdt v3)
+
+To help streamline things a bit around here (for the little work we actually do 😅), I’m going to be archiving the repos listed below. This doesn’t mean they’re broken or unusable, it just means we won’t be pushing any further updates to them for now.
+
 ![Project Sloth GitHub Project PS-SIGNROBBERY Banner](https://user-images.githubusercontent.com/91661118/170381274-38fdbeda-a6a8-454f-b797-b13b9015ed13.png)
 
 ### ps-signrobbery
